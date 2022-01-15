@@ -1,0 +1,81 @@
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+      <div class="logo">
+        <a target="_blank" rel="noopener noreferrer" 
+           href="#" class="simple-text logo-normal">
+          Medical Worker Dashboard
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+        {% if request.user.is_authenticated %}
+
+          <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+            <a class="nav-link" href="/">
+              <i class="material-icons">dashboard</i>
+              <p>General Medical Data</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'page-user' in segment %} active {% endif %}">
+            <a class="nav-link" href="/medical_page-user.html">
+              <i class="material-icons">person</i>
+              <p>Employee Profile</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'ui-tables' in segment %} active {% endif %}">
+            <a class="nav-link" href="/medical_ui-tables.html">
+              <i class="material-icons">content_paste</i>
+              <p>Patients List</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'ui-typography' in segment %} active {% endif %}">
+            <a class="nav-link" href="/medical_ui-make-appointments.html">
+              <i class="material-icons">library_books</i>
+              <p>Make Appointments</p>
+            </a>
+          </li>
+   
+          <li class="nav-item {% if 'ui-maps' in segment %} active {% endif %}">
+            <a class="nav-link" href="/medical_ui-current-appointments.html">
+              <i class="material-icons">accessibility</i>
+              <p>Current Appointments</p>
+            </a>
+          </li>
+          
+          <li class="nav-item {% if 'ui-disease-prediciton' in segment %} active {% endif %}">
+            <a class="nav-link" href="/medical_ui-maps.html">
+              <i class="material-icons">beenhere</i>
+              <p>Disease Prediction</p>
+            </a>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="/medical_page-medicine-recommendation.html">
+              <i class="material-icons">add_shopping_cart</i>
+              <p>Medicine Recommendation</p>
+            </a>
+          </li>
+          
+
+          <li class="nav-item {% if 'ui-notifications' in segment %} active {% endif %}">
+            <a class="nav-link" href="/medical_ui-notifications.html">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          
+  
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'logout' %}" >
+              <i class="material-icons">directions_run</i>
+              <p>Logout</p>
+            </a>
+          </li>
+
+        
+
+        {% endif %}
+        </ul>
+      </div>
+
+    </div>
